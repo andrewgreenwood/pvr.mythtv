@@ -41,35 +41,39 @@
           <h4>Contents</h4>
           <ul class="nav nav-pills nav-stacked">
             
-              <li  class="active" >
-                <a href="#Settings">Basic settings</a>
+              <li class="active" >
+                <a href="#BackendSettings">Backend settings</a>
               </li>
             
-              <li >
+              <li>
+                <a href="#AddonSettings">PVR Add-on settings</a>
+              </li>
+
+              <li>
                 <a href="#Channels">Channels screen</a>
               </li>
             
-              <li >
+              <li>
                 <a href="#Recordings">Recordings screen</a>
               </li>
             
-              <li >
+              <li>
                 <a href="#EPG">Electronic Programs Guide</a>
               </li>
             
-              <li >
+              <li>
                 <a href="#Timers">Timers &amp; recording rules</a>
               </li>
             
-              <li >
+              <li>
                 <a href="#Advancedsettings">Advanced settings</a>
               </li>
 
-              <li >
+              <li>
                 <a href="#Advancedfeatures">Advanced features</a>
               </li>
 
-              <li >
+              <li>
                 <a href="#Troubleshooting">Troubleshooting</a>
               </li>
           </ul>
@@ -94,23 +98,57 @@
               </div>
             </div>
 			
-            <section id="Settings">
-              <h2>Basic settings</h2>
+            <section id="BackendSettings">
+              <h2>Backend settings</h2>
               <p>To use it first you have to enable the API services of your backend and check network configuration by running mythtv-setup. <a href='http://www.mythtv.org/wiki/User_Manual:Detailed_configuration_Backend'>[1]</a></p>
 
               <ul>
               <li>
-              <p>Set the security pin as "<b>0000</b>"</p>
+              <p>Set the security pin to enable the API services, i.e "<b>0000</b>"</p>
               </li>
               <li>
               <p>Set the IPv6 address of the backend as "<b>::1</b>" if you haven't IP6 network infrastructure, which is mostly the case.</p>
               <p>Any IPv6 addresses as "fe80::..." are not usable. Only if you have valid IP6 network infrastructure you could set address assigned to your backend. Otherwise addon will not connect properly.</p>
               </ul>
-
-              <p>You could check for your issue in section <a href="#Troubleshooting">Troubleshooting</a>.</p>
-
             </section>
-          
+
+            <section id="AddonSettings">
+              <h2>PVR add-on settings</h2>
+              <p>Go to configure <b>"General"</b> settings of the add-on</p>
+                
+                <ul>
+                <li>
+                <p>Set the IP address of your <b>MASTER</b> backend. Slave backends will be used according to the logic implemented in the <b>MASTER</b>.</p>
+                </li>
+                <li>
+                <p>Set the protocol port of the backend. Default is <b>"6543"</b>.</p>
+                </li>
+                <li>
+                <p>Set the API port of the backend. Default is <b>"6544"</b>.</p>
+                </li>
+                <li>
+                <p>Set the security pin previously configured in the backend setup.</p>
+                </li>
+                <li>
+                <p>Optionally set the ethernet address of the backend server to enable WOL.</p>
+                </li>
+                </ul>
+              
+              <p>Go to configure <b>"Advanced"</b> settings of the add-on</p>
+              
+              <ul>
+                <li>
+                  <p>Adjust the tuning delay for LiveTV according to your receivers. <b>5</b> seconds should be large enougth for modern DVB-T/C receivers and a good signal. Using a rotating dish antenna need longer delay.</p>
+                </li>
+                <li>
+                  <p>By default limit channel tuning attempts for LiveTV. In a special configuration, you may want to disable it to force the add-on to try all available receivers one by one until the channel is successfully tuned.</p>
+                </li>
+              </ul>
+              
+              <p>You can check for any issue in section <a href="#Troubleshooting">Troubleshooting</a>.</p>
+                
+            </section>
+            
             <section id="Channels">
               <h2>Channels screen</h2>
                   <div>
